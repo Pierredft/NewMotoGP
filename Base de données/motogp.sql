@@ -1,0 +1,59 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+-- Structure de la table `utilisateur`
+DROP TABLE IF EXISTS UTILISATEUR;
+CREATE TABLE IF NOT EXISTS UTILISATEUR(
+   ID_User INT NOT NULL AUTO_INCREMENT,
+   Nom_User longtext NOT NULL,
+   Prenom_User longtext NOT NULL,
+   Mail_User longtext NOT NULL,
+   MDP_User longtext NOT NULL,
+   Img_Profile longtext NOT NULL,
+   PRIMARY KEY(ID_User)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+
+
+-- Structure de la table `SUJET`
+DROP TABLE IF EXISTS SUJET;
+CREATE TABLE IF NOT EXISTS SUJET(
+   Id_Sujet INT NOT NULL AUTO_INCREMENT,
+   Nom_Sujet longtext NOT NULL,
+   PRIMARY KEY(Id_Sujet)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+
+
+-- Strucuture de la table `Message`
+DROP TABLE IF EXISTS MESSAGE;
+CREATE TABLE IF NOT EXISTS MESSAGE(
+   Id_Message INT NOT NULL AUTO_INCREMENT,
+   ID_User INT NOT NULL,
+   Id_Sujet INT NOT NULL,
+   PRIMARY KEY(Id_Message),
+   FOREIGN KEY(ID_User) REFERENCES UTILISATEUR(ID_User),
+   FOREIGN KEY(Id_Sujet) REFERENCES SUJET(Id_Sujet)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+
+-- Structure de la table `Catégories`
+DROP TABLE IF EXISTS Catégories;
+CREATE TABLE IF NOT EXISTS Catégories(
+   Id_Categories INT NOT NULL AUTO_INCREMENT,
+   Nom_Catégories longtext NOT NULL,
+   ID_User INT NOT NULL,
+   PRIMARY KEY(Id_Categories),
+   FOREIGN KEY(ID_User) REFERENCES UTILISATEUR(ID_User)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+
+
+-- Structure de la table `a_pour`
+DROP TABLE IF EXISTS a_pour;
+CREATE TABLE IF NOT EXISTS a_pour(
+   Id_Sujet INT NOT NULL,
+   Id_Categories INT NOT NULL,
+   PRIMARY KEY(Id_Sujet, Id_Categories),
+   FOREIGN KEY(Id_Sujet) REFERENCES SUJET(Id_Sujet),
+   FOREIGN KEY(Id_Categories) REFERENCES Catégories(Id_Categories)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+COMMIT;
