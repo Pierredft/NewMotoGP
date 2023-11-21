@@ -1,6 +1,6 @@
 <?php
     //appel de mon fichier de connexion
-    require_once "../Includes/connexiondb.php";
+    require_once "./includes/connexiondb.php";
     //creation de la variable de connexion à la bdd
     $con = connectdb();
 

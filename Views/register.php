@@ -1,4 +1,5 @@
-<?php require_once "../Includes/head.php" 
+<?php require_once "../includes/head.php";
+require_once "../controllers/utilisateurController.php";
 ?>
     <link rel="stylesheet" href="../CSS/register.css">
     <title>Register</title>
@@ -9,7 +10,7 @@
     <h1 class="motoGP">INSCRIPTION</h1>
     <main>
         <div class="container">
-            <form id="signup" class="form" action="../Connexion/connexion.html">
+            <form id="signup" class="form" action="../views/connexion.php">
                 <div class="flex">
                 <div class="form-field error success size">
                     <label for="Nom_User"><span class="color texteMotoGP">Nom:</span></label>
@@ -49,6 +50,31 @@
             </form>
         </div>
     </main>
+    <?php
+
+require_once "../includes/connexiondb.php";
+ $con = connectdb();
+ 
+ //on vérifie si les champs sont remplis
+if(isset($_POST['Nom_User']) && isset($_POST['Prenom_User']) && isset($_POST['Mail_User']) && isset($_POST['MDP_User']) && isset ($_POST['Img_Profile'])){
+
+    //création des variables pour stocker les données des champs
+    $nom        =   $_POST['Nom_User'];
+    $prenom     =   $_POST['Prenom_User'];
+    $mail       =   $_POST['Mail_User'];
+    $pass       =   $_POST['MDP_User'];
+    $imgProfile =   $_POST['Img_Profile'];
+
+    //on fait notre requête sql avec le prépare
+    $req= $con->prepare('INSERT INTO UTILISATEUR (Non_User, Prenom_User, Mail_User, MDP_User, Img_Profile) VALUES (?,?,?,?,?)');
+    //puis on exécute notre requête
+    $req->execute(array($nom,$prenom,$mail,$pass,$imgProfile));
+    // retour sur le tableau des auteurs
+    header('location: ../views/connexion.php');
+    exit;
+}
+
+?>
     <script src="../JS/register.js"></script>
 </body>
 </html>

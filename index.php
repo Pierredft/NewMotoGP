@@ -1,8 +1,8 @@
-<?php require_once "Includes/head.php";
-    require_once "Controllers/utilisateurController.php";
+<?php require_once "./includes/head.php";
+    require_once "./controllers/utilisateurController.php";
  ?>
  <!-- CSS de la page -->
-<link rel="stylesheet" href="./opening.cs">
+<link rel="stylesheet" href="./opening.css">
 
     <title>Opening</title>
 </head>
