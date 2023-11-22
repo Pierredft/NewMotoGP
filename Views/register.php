@@ -1,6 +1,6 @@
-<?php require_once "../includes/head.php";
-require_once "../controllers/utilisateurController.php";
-require_once "../controllers/addutilisateur.php";
+<?php   require_once "../includes/head.php";
+        require_once "../controllers/utilisateurController.php";
+        require_once "../controllers/addutilisateur.php";
 ?>
 
 <link rel="stylesheet" href="../CSS/register.css">
@@ -12,7 +12,7 @@ require_once "../controllers/addutilisateur.php";
     <h1 class="motoGP">INSCRIPTION</h1>
     <main>
         <div class="container">
-            <form id="signup" class="form" action="../controllers/addutilisateur.php" method="post">
+            <form id="signup" class="form" action="../controllers/addutilisateur.php" method="post" enctype="multipart/form-data">
                 <div class="flex">
                     <div class="form-field error success size">
                         <label for="Nom_User"><span class="color texteMotoGP">Nom:</span></label>
@@ -41,10 +41,18 @@ require_once "../controllers/addutilisateur.php";
                 </div>
 
                 <div class="form-field error success">
-                    <label for="confirm-password"><span class="color texteMotoGP">Confirmation du mot de passe:</span></label>
-                    <input type="password" name="confirm-password" id="confirm-password" autocomplete="off">
+                    <label for="confpass"><span class="color texteMotoGP">Confirmation du mot de passe:</span></label>
+                    <input type="password" name="confpass" id="confirm-password" autocomplete="off">
                     <small></small>
                 </div>
+
+                <div class="form-field error success">
+                    <label for="Img_Profile"><span class="color texteMotoGP">Selectionner votre photo de profile</span></label>
+                    <input type="file" name="Img_Profile" id="fichier">
+                    <small></small>
+                </div>
+
+                <input type="checkbox" name="rgpd" value="rgpd"><span>En cochant cette case vous accepter l'utilisation de vos donées</span>
 
                 <div class="test">
                     <input type="submit" value="S'inscrire" class="btn motoGP">
