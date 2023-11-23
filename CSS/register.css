@@ -11,11 +11,10 @@
 }
 
 body{
-    background-image: url(../Register/Img/Moto.jpg);
+    background-image: url(../img/Moto.jpg);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
 h1{
