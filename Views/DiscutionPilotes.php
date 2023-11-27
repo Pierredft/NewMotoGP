@@ -1,45 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../DiscutionPilotes/DiscutionPilotes.css">
-    <link rel="stylesheet" href="../PoliceEcriture/MotoGP4/style.css">
-    <link rel="stylesheet" href="../PoliceEcriture/MotoGP1/style.css">
-    <title>Discution Pilotes</title>
+<title>Discution Pilotes</title>
+<?php if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+require_once "../includes/head.php";
+require_once "../includes/header.php";
+require_once "../controllers/addSujetPilote.php";
+require_once "../controllers/sujetPiloteController.php";
+?>
+    <link rel="stylesheet" href="../CSS/DiscutionPilotes.css">
 </head>
 
 <body>
-    <nav>
-        <a class="btnRetourAccueil texteMotoGP" href="../Accueil/Accueil.html" role="button">Retour à l'accueil</a>
-    </nav>
+
     <!-- tableau ajout de sujet -->
     <table class="table1" align="center">
         <thead class="thead1">
             <tr class="tr1">
                 <th class="motoGP th1">#</th>
                 <th class="motoGP th1">Sujet</th>
-                <th class="motoGP th1">Dernier sujet</th>
-                <th class="motoGP th1">Auteur</th>
+                <!-- <th class="motoGP th1">Dernier sujet</th>
+                <th class="motoGP th1">Auteur</th> -->
             </tr>
         </thead>
+        <?php
+    //boucle foreach pour afficher chaque ligne de la requête
+    foreach($lignes as $ligne){
+        echo '<tr>
+      <td>'.$ligne['Id_Sujet'].'</td>
+      <td>'.$ligne['Nom_Sujet'].'</td>
+    </tr>';
+    }
+    ?>
         <tbody id="table-body">
         </tbody>
     </table>
     <!-- tableau ajout de sujet -->
 
     <!-- ajout du sujet -->
+    <form action="../controllers/addSujetPilote.php" method="POST" class="">
     <div class="flex">
-        <button class="btnAjouterUnSujet texteMotoGP" id="add-topic">Ajouter un sujet</button>
         <div class="flex2 zoneAjouter" id="zoneAjouter">
-            <input class="zoneText" type="text" id="topic-input" placeholder="Entrer votre nouveau sujet">
+            <input class="zoneText" type="text" name="Nom_Sujet" id="topic-input" placeholder="Entrer votre nouveau sujet">
             <button class="btnAjouter" id="add-button">Ajouter</button>
         </div>
     </div>
+    </form>
     <!-- ajout du sujet -->
 
     <!-- tableau des classement pilotes -->
@@ -272,9 +275,10 @@
                 </table>
             </div>
         </div>
+        <?php
+        // require_once "../includes/footer.php" ?>
         <!-- tableau des classement pilotes -->
-        <script src="../DiscutionPilotes/DiscutionPilotes.js"></script>
-        <script src="../DiscutionPilotes/cacheClassement.js"></script>
+        <script src="../JS/cacheClassement.js"></script>
     </body>
 
 </html>

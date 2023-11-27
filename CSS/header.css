@@ -1,0 +1,42 @@
+/* Onglet de navigation */
+.navLink{
+    text-decoration: none;
+    color: #FFFF;
+    font-size: 1.5em;
+}
+
+.mr{
+    margin-right: 5%;
+    padding: 2% 0;
+}
+
+.bgRed{
+    background-color: rgb(183, 39, 26);
+}
+
+/* FOOTER */
+.logoFooter{
+    width: 80%;
+    background-color: #FFFF;
+    border-radius: 5%;
+}
+
+.footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding:1%;
+}
+
+.copyR{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFF;
+    font-size: 5vh;
+}
+
+.width{
+    width: 100px;
+}

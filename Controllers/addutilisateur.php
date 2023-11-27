@@ -11,7 +11,7 @@ if (isset($_POST['Nom_User']) && isset($_POST['Prenom_User']) && isset($_POST['M
     $prenom     =   $_POST['Prenom_User'];
     $prenomreg  =   "/^[a-zA-Z]{3,}$/";
     $mail       =   $_POST['Mail_User'];
-    $regmail    =   "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
+    $regmail    =   '/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
     $pass       =   $_POST['MDP_User'];
     $confpass   =   $_POST['confpass'];
     $regpass    =   "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#\+\-\^\[\]])[A-Za-z\d#\+\-\^\[\]]{8,}$/";

@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Accueil/Accueil.css">
-    <link rel="stylesheet" href="../PoliceEcriture/MotoGP1/style.css">
-    <link rel="stylesheet" href="../PoliceEcriture/MotoGP4/style.css">
+<?php 
+require_once "../includes/head.php";
+require_once "../includes/header.php";
+require_once "../controllers/utilisateurController.php";
+?>
+    <link rel="stylesheet" href="../CSS/Accueil.css">
     <title>Accueil</title>
 </head>
 
@@ -14,24 +11,24 @@
     <nav>
         <div class="bienvenue">
             <h1 class="motoGP">Bienvenue :</h1>
-            <p id="prenom" class="texteMotoGP size3vh"></p>
+            <!-- <?php 
+                foreach ($lignes as $ligne){
+                   echo '<p value='.$ligne['ID_User'].'>'.$ligne['Nom_User'].'</p>';
+                   var_dump($ligne);
+                }
+                ?> -->
         </div>
         <div class="date">
             <h1 class="motoGP">Nous somme le :</h1>
-            <p id="affDate" class="texteMotoGP size3vh"></p>
+            <?php $date = date("j,n,Y");
+            echo '<p class="texteMotoGP size3vh">'.$date.'</p>' ?>
         </div>
         <div class="heure">
             <h1 class="motoGP">Vous vous êtes connecté à :</h1>
-            <p id="affHeures" class="texteMotoGP size3vh"></p>
+            <?php
+            echo '<p class="texteMotoGP size3vh">'.$heures.'</p>' ?>
         </div>
     </nav>
-
-    <div class="site">
-        <p class="motoGP colorRed">Visiter le site officiel</p>
-        <div class="image">
-            <a href="https://www.motogp.com/fr"><img class="logoSize" src="../Accueil/Img/Logo.png"></a>
-        </div>
-    </div>
     <div class="categories">
         <div class="pito">
             <div class="pilotes">
@@ -41,7 +38,7 @@
                     préféré
                 </p>
                 <p class="mb-4 colorBlack size3vh pResp">(Classement, transfert, chute, blessure...)</p>
-                <a class="motoGP cssBtn" href="../DiscutionPilotes/DiscutionPilotes.html" role="button">J'y vais</a>
+                <a class="motoGP cssBtn" href="../views/DiscutionPilotes.php" role="button">J'y vais</a>
             </div>
 
             <div class="ecuries">
@@ -54,16 +51,17 @@
                     pour la
                     prochaine
                     saison...)</p>
-                <a class="motoGP cssBtn" href="../DiscutionEcuries/DiscutionEcuries.html" role="button">J'y vais</a>
+                <a class="motoGP cssBtn" href="../views/DiscutionEcuries.php" role="button">J'y vais</a>
             </div>
         </div>
             <div class="circuits">
                 <h2 class="motoGP stroke size4vh h2Resp">Circuits</h2>
                 <p class="texteMotoGP stroke size3vh pResp">Venez discuter des circuits de motoGP du monde entier</p>
                 <p class="mb-4 colorBlack size3vh pResp">(Pays, difficultés, record de vitesse, grand moment...)</p>
-                <a class="motoGP cssBtn" href="../DiscutionCircuits/DiscuitionCircuits.html" role="button">J'y vais</a>
+                <a class="motoGP cssBtn" href="../views/DiscuitionCircuits.php" role="button">J'y vais</a>
             </div>
     </div>
+    <?php require_once "../includes/footer.php" ?>
     <script src="../Accueil/Accueil.js"></script>
 </body>
 

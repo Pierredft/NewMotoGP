@@ -80,25 +80,10 @@ tr{
     color: white;
     padding: 10px;
 }
-/* disposition des buttons et de l'emplacement ajout sujet */
 
-/* cache de la zone ajouter */
-.zoneAjouter{
-    display: none;
-}
-/* cache de la zone ajouter */
 
-/* afficher zone ajouter apres click button ajouter sujet */
-.zoneAjouterAfficher{
-    display: block;
-    margin-left: 25%;
 
-}
-/* afficher zone ajouter apres click button ajouter sujet */
 
-/* classement pilote */
-
-/* classement pilote */
 /* tête du tableau classement */
 .btnClassement {
     background: none;

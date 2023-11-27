@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: url(../Accueil/Img/GP23.jpg);
+    background-image: url(../img/GP23.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -28,22 +28,10 @@ nav {
     margin-bottom: -2%;
 }
 
-.site {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5%;
-    margin-left: 5%;
-    margin-top: 3%;
-}
-
-.image{
-   width: 100%; 
-}
-
 .pilotes {
     width: 40%;
     text-align: center;
-    background-image: url(../Accueil/Img/ValeRossi.jpg);
+    background-image: url(../img/ValeRossi.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,7 +42,7 @@ nav {
 .ecuries {
     width: 40%;
     text-align: center;
-    background-image: url(../Accueil/Img/GASGAS.jpg);
+    background-image: url(../img/GASGAS.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,7 +53,7 @@ nav {
 .circuits {
     width: 40%;
     text-align: center;
-    background-image: url(../Accueil/Img/Cicuit.jpg);
+    background-image: url(../img/Cicuit.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
