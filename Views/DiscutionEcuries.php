@@ -1,7 +1,6 @@
 <?php if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 require_once "../includes/head.php";
 require_once "../includes/header.php";
-require_once "../controllers/addSujetEcuries.php";
 require_once "../controllers/sujetEcuriesController.php";
 ?>
 <link rel="stylesheet" href="../CSS/DiscutionPilotes.css">
@@ -34,7 +33,7 @@ require_once "../controllers/sujetEcuriesController.php";
     <!-- tableau ajout de sujet -->
 
     <!-- ajout du sujet -->
-    <form action="../controllers/addSujetEcuries.php" method="POST" class="">
+    <form action="../controllers/sujetEcuriesController.php" method="POST" class="">
 
     <div class="flex">
         <div class="flex2 zoneAjouter" id="zoneAjouter">
@@ -133,7 +132,7 @@ require_once "../controllers/sujetEcuriesController.php";
     <script src="../DiscutionEcuries/DiscutionEcuries.js"></script>
     <script src="../JS/cacheClassement.js"></script>
     <?php
-    //  require_once "../includes/footer.php"; ?>
+     require_once "../includes/footer.php"; ?>
 </body>
 
 </html>

@@ -2,7 +2,6 @@
 <?php if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 require_once "../includes/head.php";
 require_once "../includes/header.php";
-require_once "../controllers/addSujetPilote.php";
 require_once "../controllers/sujetPiloteController.php";
 ?>
     <link rel="stylesheet" href="../CSS/DiscutionPilotes.css">
@@ -35,7 +34,7 @@ require_once "../controllers/sujetPiloteController.php";
     <!-- tableau ajout de sujet -->
 
     <!-- ajout du sujet -->
-    <form action="../controllers/addSujetPilote.php" method="POST" class="">
+    <form action="../controllers/sujetPiloteController.php" method="POST" class="">
     <div class="flex">
         <div class="flex2 zoneAjouter" id="zoneAjouter">
             <input class="zoneText" type="text" name="Nom_Sujet" id="topic-input" placeholder="Entrer votre nouveau sujet">
@@ -275,10 +274,10 @@ require_once "../controllers/sujetPiloteController.php";
                 </table>
             </div>
         </div>
-        <?php
-        // require_once "../includes/footer.php" ?>
         <!-- tableau des classement pilotes -->
         <script src="../JS/cacheClassement.js"></script>
+        <?php
+        require_once "../includes/footer.php" ?>
     </body>
 
 </html>

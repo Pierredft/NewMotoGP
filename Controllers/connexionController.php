@@ -25,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $response = $con->query($password);
         $passPass = $response->fetch();
 
+        date_default_timezone_set('Europe/Paris');
+
         if(!$utilisateurMail){
             $_SESSION['erreur7'] = 1;
             header("Refresh:0; url= ../views/connexion.php");
@@ -39,6 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['erreur7'] = 0;
             $_SESSION['erreur8'] = 0;
             $_SESSION['success2'] = 1;
+            $_SESSION['user'] = 1;
+            $_SESSION['nom'] = $passPass['Nom_User'];
+            $_SESSION['prenom'] = $passPass['Prenom_User'];
+            $_SESSION['date'] = new DateTime();
+            $_SESSION['profile'] = $passPass['Img_Profile'];
             header('Location:../views/Accueil.php');
             exit;
         }

@@ -2,6 +2,7 @@
     margin: 0;
 }
 
+/* image en arrière plan */
 body {
     background-image: url(../img/GP23.jpg);
     background-position: center;
@@ -9,7 +10,8 @@ body {
     background-repeat: no-repeat;
 }
 
-nav {
+/* bandeau d'information */
+.bandeau {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -17,6 +19,120 @@ nav {
     color: #fff;
     background-color: rgb(182, 182, 182, 0.5);
 }
+
+/* Disposition de la partie de bienvenue */
+.bienvenue{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+/* disposition du nom et prenom dans la partie de bienvenue */
+.NomPrenom{
+    display: flex;
+    align-items: center;
+    color: red;
+    font-size: 3vh;
+    margin-top: 15px;
+}
+
+/* Disposition de la partie date du jour */
+.date{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* disposition de la date du jour dans la partie date du jour */
+.dateJ{
+    font-size: 4vh;
+    margin-top: 15px;
+}
+
+/* Disposition de la partie heure de connexion */
+.heure{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Disposition de l'heure dans la partie heure de connexion */
+.heureCo{
+    font-size: 4vh;
+}
+
+/* fin du bandeau */
+
+/* Mise en forme des 3 catégories de sujet */
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10%;
+}
+
+/* Mise en forme de l'onglet de la catégories pilotes */
+.pilotes {
+    background-color: rgb(182, 182, 182, 0.5);
+    width: 30%;
+    border: solid 1px rgb(182, 182, 182, 0.5);
+    border-radius: 0% 50%;
+    text-align: center;
+    color: #fff;
+    padding: 5%;
+    padding-top: 12.8%;
+}
+
+/* Mise en forme de l'onglet de la catégories écuries */
+.ecuries {
+    background-color: rgb(182, 182, 182, 0.5);
+    border: solid 1px rgb(182, 182, 182, 0.5);
+    border-radius: 50% 0%;
+    width: 30%;
+    text-align: center;
+    color: #fff;
+    padding: 5%;
+}
+
+/* Mise en forme de l'onglet de la catégories circuits */
+.circuits {
+    background-color: rgb(182, 182, 182, 0.5);
+    border: solid 1px rgb(182, 182, 182, 0.5);
+    border-radius: 0% 50%;
+    width: 30%;
+    text-align: center;
+    color: #fff;
+    padding: 5%;
+}
+
+.size4vh {
+    font-size: 4vh;
+}
+
+.size3vh {
+    font-size: 3vh;
+}
+
+.mb-4 {
+    margin-bottom: 4%;
+}
+
+.colorBlack {
+    color: black;
+}
+
+.cssBtn {
+    background-color: rgb(183, 39, 26);
+    color: #fff;
+    text-decoration: none;
+    padding: 2% 5%;
+    border-radius: 10px;
+}
+
 
 .logoSize {
     width: 10%;
@@ -28,108 +144,20 @@ nav {
     margin-bottom: -2%;
 }
 
-.pilotes {
-    width: 40%;
-    text-align: center;
-    background-image: url(../img/ValeRossi.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    padding-bottom: 10%;
-}
 
-.ecuries {
-    width: 40%;
-    text-align: center;
-    background-image: url(../img/GASGAS.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    padding-bottom: 2%;
-}
 
-.circuits {
-    width: 40%;
-    text-align: center;
-    background-image: url(../img/Cicuit.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #fff;
-    padding-bottom: 5%;
-}
 
-.stroke {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-}
-
-.mb-4 {
-    margin-bottom: 4%;
-}
-
-.colorBlack {
-    color: black;
-}
 
 .colorwhite {
     color: white;
 }
 
-.cssBtn {
-    background-color: rgb(183, 39, 26);
-    color: #fff;
-    text-decoration: none;
-    padding: 2% 5%;
-    border-radius: 10px;
-}
 
-.size4vh {
-    font-size: 4vh;
-}
 
-.size3vh {
-    font-size: 3vh;
-}
 
-.categories {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10%;
-}
 
-.bienvenue{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
 
-.date{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
 
-.heure{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-
-.pito{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-}
 
 @media only screen and (max-width:829px){
     .bienvenue{

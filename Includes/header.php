@@ -1,7 +1,6 @@
 <?php
 require_once "../includes/head.php";
 ?>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="../CSS/header.css">
 <title>Header</title>
 </head>
@@ -37,10 +36,16 @@ require_once "../includes/head.php";
                     </li>
                 </ul>
             </div>
+            <?php if (isset($_SESSION['user']) && $_SESSION['user'] == 1) {
+                                echo '<a class="nav-link active text-white mx-2" id="deco" href="../controllers/deconnexion.php">Se déconnecter</a>';
+                                    echo '<p class="mx-2">'. $_SESSION['nom'] . ' ' . $_SESSION['prenom'] . '</p>';
+                                    echo '<div class="picConnect"><img id="test" src='.$_SESSION['profile'].'></img></div>';
+                        } else { echo '<a class="nav-link disabled text-secondary mx-2" id="deco" href="../controllers/decoconnexion.php">Se déconnecter</a>';
+                        }    
+                        ?>
         </div>
     </nav>
     <!-- Navbar -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>

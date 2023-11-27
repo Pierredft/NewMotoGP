@@ -1,7 +1,6 @@
 <?php if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 require_once "../includes/head.php";
 require_once "../includes/header.php";
-require_once "../controllers/addSujetCircuits.php";
 require_once "../controllers/sujetCircuitsController.php";
 ?>
     <link rel="stylesheet" href="../CSS/DiscutionCircuits.css">
@@ -35,7 +34,7 @@ require_once "../controllers/sujetCircuitsController.php";
     <!-- tableau ajout de sujet -->
 
     <!-- ajout du sujet -->
-    <form action="../controllers/addSujetCircuits.php" method="POST" class="">
+    <form action="../controllers/sujetCircuitsController.php" method="POST" class="">
     <div class="flex">
         <div class="flex2 zoneAjouter" id="zoneAjouter">
             <input class="zoneText" type="text" id="topic-input" placeholder="Entrer votre nouveau sujet">
@@ -272,6 +271,8 @@ require_once "../controllers/sujetCircuitsController.php";
 
     <script src="../DiscutionCircuits/DiscutionCircuits.js"></script>
     <script src="../JS/cacheClassement.js"></script>
+    <?php require_once "../includes/footer.php" ?>
+
 </body>
 
 </html>
